@@ -27,7 +27,7 @@ git clone https://github.com/DanielFGray/tmux-fzf-urls ~/clone/path
 Add this line to the bottom of `.tmux.conf`:
 
 ``` tmux
-run-shell ~/clone/path/main.sh
+run-shell ~/clone/path/tmux-fzf-urls/fzf-urls.tmux
 ```
 
 Reload TMUX environment:
