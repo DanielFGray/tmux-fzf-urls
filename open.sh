@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
-urls=$(tmux capturep -p -t "$1" | grep -Po '[a-z]+://[a-zA-Z0-9_%./\[\],~?&=-]+')
-url=$(fzf --tac --bind='Ctrl-y:execute:xclip -r <<< {}; tmux display-message "yanked"' <<< "$urls")
-xdg-open "$url"
+cd "${BASH_SOURCE%/*}" || exit
+source "$PWD/utils.sh"
+
+url=$(fzf --tac --bind='Ctrl-y:execute:xclip -r <<< {}; tmux display-message "yanked"' < /tmp/tmux-fzfurls)
+echo > /tmp/tmux-fzfurls
+"$(get_tmux_option '@fzfurls-cmd' 'xdg-open')" "$url"
