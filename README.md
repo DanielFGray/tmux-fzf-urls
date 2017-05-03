@@ -10,7 +10,9 @@ Parses tmux panes for urls and displays them in [fzf][fzf]
 
 Add plugin to the list of TPM plugins in your `.tmux.conf`:
 
-    set -g @plugin 'DanielFGray/tmux-fzf-urls'
+``` tmux
+set -g @plugin 'DanielFGray/tmux-fzf-urls'
+```
 
 Hit `prefix + I` to fetch the plugin and source it. You should now be able to use the plugin.
 
@@ -18,16 +20,22 @@ Hit `prefix + I` to fetch the plugin and source it. You should now be able to us
 
 Clone the repo:
 
-    $ git clone https://github.com/DanielFGray/tmux-fzf-urls ~/clone/path
+``` sh
+git clone https://github.com/DanielFGray/tmux-fzf-urls ~/clone/path
+```
 
 Add this line to the bottom of `.tmux.conf`:
 
-    run-shell ~/clone/path/main.sh
+``` tmux
+run-shell ~/clone/path/main.sh
+```
 
 Reload TMUX environment:
 
-    # type this in terminal
-    $ tmux source-file ~/.tmux.conf
+``` sh
+# type this in terminal
+tmux source-file ~/.tmux.conf
+```
 
 You should now be able to use the plugin.
 
